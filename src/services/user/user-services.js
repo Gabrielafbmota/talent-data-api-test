@@ -1,18 +1,17 @@
 import file from '../../../fixtures/users.json'
 
 const userServices = ({ logger }) => {
-  async function getUser({ email, password }){
-   return file.filter(item => {
-      if(email === item.email && password === item.password){
+  async function getUser ({ email, password }) {
+    return file.filter(item => {
+      if (email === item.email && password === item.password) {
         return item
       }
     })
   }
 
   return {
-    getUser
+    getUser,
   }
 }
-
 
 export default userServices

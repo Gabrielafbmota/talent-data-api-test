@@ -3447,10 +3447,10 @@ fastify-helmet@^5.1.0:
     fastify-plugin "^3.0.0"
     helmet "^4.0.0"
 
-fastify-jwt@^2.1.3:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/fastify-jwt/-/fastify-jwt-2.5.0.tgz#6cd4d9b979638edccb6fd3d7f9972c0157cd3bf7"
-  integrity sha512-QXOSfo65OxSk30TTecLh8J0LEmuQJwRPqXMDvPA9HfLdsX/xPdq/QSvQFvR5Aj1kwrFFjsyb1SNAOQmbkmpj4w==
+fastify-jwt@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fastify-jwt/-/fastify-jwt-3.0.0.tgz#d0cf2bfc02cf12b3826f534258f559baf9c8518f"
+  integrity sha512-gFo6AQRz71TEteKisNcgXNYei1QzNBzXH59J00PBoRHhK3YtADF/teQxrKTyR2GeIBwuQnVJNRtsFRgLd7adTA==
   dependencies:
     "@types/jsonwebtoken" "^8.5.0"
     fastify-plugin "^3.0.0"

@@ -21,7 +21,7 @@ const createContainer = async ({ env }) => {
     env: asValue(env),
     logger: asFunction(makeLogger).singleton(),
     config: asFunction(configServices).singleton(),
-    userServices: asFunction(userServices).singleton()
+    userServices: asFunction(userServices).singleton(),
   })
 
   return container
