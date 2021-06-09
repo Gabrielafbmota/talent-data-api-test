@@ -1,0 +1,139 @@
+{
+  "name": "talent-data-api-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stit/talent-data-api-test.git",
+  "author": "Gabriela Mota <gabriela.mota.ext@bayer.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel watch serve:dev",
+    "start": "npm-run-all --parallel watch serve:dev",
+    "build": "better-npm-run build",
+    "watch": "better-npm-run watch",
+    "serve:dev": "better-npm-run serve-dev",
+    "lint": "better-npm-run format && better-npm-run lint",
+    "test": "jest --silent --ci --errorOnDeprecated --verbose --coverage --passWithNoTests  --detectOpenHandles --force-exit",
+    "test:watch": "jest --errorOnDeprecated --watch --notify",
+    "test:integration": "jest --silent --ci --errorOnDeprecated --verbose --coverage --passWithNoTests --config tests/jest.config.js --force-exit",
+    "test:integration:watch": "jest --errorOnDeprecated --watch --notify --config tests/jest.config.js"
+  },
+  "betterScripts": {
+    "build": {
+      "command": "node utils/build.js",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
+      }
+    },
+    "watch": {
+      "command": "node utils/watch.js",
+      "env": {
+        "NODE_ENV": "development",
+        "BABEL_ENV": "development"
+      }
+    },
+    "serve-dev": {
+      "command": "wait-on dist/main.js && node-dev dist/main.js | pino-pretty -i time,pid,hostname",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "lint": "eslint . --fix",
+    "format": "prettier \"**/{*.{js?(on),y?(a)ml,md},.*.y?(a)ml,.*.json}\" --write --loglevel warn"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-proposal-private-methods": "^7.12.1",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
+    "@babel/preset-env": "^7.12.11",
+    "@influxdata/influxdb-client": "^1.9.0",
+    "awilix": "^4.3.1",
+    "babel-loader": "^8.2.2",
+    "better-npm-run": "^0.1.1",
+    "better-validator": "^2.1.9",
+    "bullmq": "^1.12.0",
+    "compile-json-stringify": "^0.1.2",
+    "copy-webpack-plugin": "^7.0.0",
+    "cuid": "^2.1.8",
+    "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "fast-json-stringify": "^2.2.10",
+    "fastify": "^3.9.2",
+    "fastify-auth": "^1.0.1",
+    "fastify-compress": "^3.4.0",
+    "fastify-cookie": "^5.1.0",
+    "fastify-cors": "^5.1.0",
+    "fastify-helmet": "^5.1.0",
+    "fastify-jwt": "^2.1.3",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.0",
+    "find-my-way": "^3.0.5",
+    "fluent-schema": "^1.1.0",
+    "glob": "^7.1.6",
+    "is-docker": "^2.1.1",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
+    "pino": "^6.8.0",
+    "point-in-polygon": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "under-pressure": "^5.4.0",
+    "uuid": "^8.3.2",
+    "webpack": "^5.11.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{*.{json,y?(a)ml,md,?(s)css},.*.y?(a)ml,.*.json},.vscode/*.json": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.3.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-extra-rules": "^0.0.0-development",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-unicorn": "^24.0.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.10.0",
+    "faker": "^5.1.0",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "node-dev": "^6.2.0",
+    "npm-run-all": "^4.1.5",
+    "pino-pretty": "^4.3.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.4",
+    "supertest": "^6.0.1",
+    "typescript": "^4.1.3",
+    "wait-on": "^5.2.0"
+  }
+}

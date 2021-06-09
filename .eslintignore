@@ -1,0 +1,12 @@
+dist
+logs
+node_modules
+temp
+*.log
+.env
+.vscode/**
+.scannerwork/**
+**/package-lock.json
+
+coverage/
+*.lcov
