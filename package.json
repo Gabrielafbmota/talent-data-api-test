@@ -85,20 +85,6 @@
     "webpack": "^5.11.0",
     "webpack-node-externals": "^2.5.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{*.{json,y?(a)ml,md,?(s)css},.*.y?(a)ml,.*.json},.vscode/*.json": [
-      "prettier --write"
-    ],
-    "*.js": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.3",
     "@sucrase/jest-plugin": "^2.0.0",

@@ -1,8 +1,17 @@
-import path from 'path'
-import fs from 'fs'
+import file from '../../../fixtures/users.json'
 
 const userServices = ({ logger }) => {
-  const log = logger.child({ module: 'userServices' })
+  async function getUser({ email, password }){
+   return file.filter(item => {
+      if(email === item.email && password === item.password){
+        return item
+      }
+    })
+  }
+
+  return {
+    getUser
+  }
 }
 
 
