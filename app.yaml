@@ -1,6 +1,2 @@
 runtime: nodejs12
 instance_class: F2
-
-env_variables:
-  PORT: 8080
-  JWT_TOKEN: '84dd6cdfbf62054ef707bd3073b54bcf'
