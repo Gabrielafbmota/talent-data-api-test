@@ -2,6 +2,8 @@ import pino from 'pino'
 
 import configServices from './config/config-services'
 import userServices from './user/user-services'
+import organizationServices from './organization/organization-services'
+
 import { createContainer as createAwilixContainer, asValue, asFunction } from 'awilix'
 
 const makeLogger = ({ env }) => {
@@ -22,6 +24,7 @@ const createContainer = async ({ env }) => {
     logger: asFunction(makeLogger).singleton(),
     config: asFunction(configServices).singleton(),
     userServices: asFunction(userServices).singleton(),
+    organizationServices: asFunction(organizationServices).singleton(),
   })
 
   return container
