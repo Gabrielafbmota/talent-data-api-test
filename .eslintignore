@@ -6,6 +6,7 @@ temp
 .env
 .vscode/**
 .scannerwork/**
+sonar-project.properties
 **/package-lock.json
 
 coverage/
