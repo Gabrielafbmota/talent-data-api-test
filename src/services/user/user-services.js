@@ -1,9 +1,9 @@
 import file from '../../../fixtures/users.json'
+import orgs from '../../../fixtures/organization.json'
 
 const userServices = ({ logger }) => {
   const roles = {
     junior: {
-
       level: [2],
     },
     middle: {
