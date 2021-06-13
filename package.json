@@ -10,6 +10,7 @@
     "dev": "npm-run-all --parallel watch serve:dev",
     "start": "npm-run-all --parallel watch serve:dev",
     "build": "better-npm-run build",
+    "deploy": "yarn build && ",
     "watch": "better-npm-run watch",
     "serve:dev": "better-npm-run serve-dev",
     "lint": "better-npm-run format && better-npm-run lint",
