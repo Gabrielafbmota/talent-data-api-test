@@ -1,0 +1,109 @@
+Arguments: 
+  C:\Users\EIRON\Anaconda3\node.exe C:\Users\EIRON\Anaconda3\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\EIRON\bin;C:\Users\EIRON\AppData\Local\Programs\Git\mingw64\bin;C:\Users\EIRON\AppData\Local\Programs\Git\usr\local\bin;C:\Users\EIRON\AppData\Local\Programs\Git\usr\bin;C:\Users\EIRON\AppData\Local\Programs\Git\usr\bin;C:\Users\EIRON\AppData\Local\Programs\Git\mingw64\bin;C:\Users\EIRON\AppData\Local\Programs\Git\usr\bin;C:\Users\EIRON\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\windows\System32\OpenSSH;C:\Program Files (x86)\Sennheiser\SoftphoneSDK;C:\Program Files (x86)\Java\jdk-13.0.0\bin;C:\Users\EIRON\Anaconda3;C:\Users\EIRON\Anaconda3\Library\mingw-w64\bin;C:\Users\EIRON\Anaconda3\Library\usr\bin;C:\Users\EIRON\Anaconda3\Library\bin;C:\Users\EIRON\Anaconda3\Scripts;C:\Users\EIRON\AppData\Local\Microsoft\WindowsApps;C:\Users\EIRON\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\EIRON\AppData\Local\Programs\Git\cmd;C:\Users\EIRON\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\EIRON\AppData\Local\Programs\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\EIRON\OneDrive - Bayer\Desktop\workspace\personal\talent-data-api-test\package.json: Unexpected token } in JSON at position 2422
+      at JSON.parse (<anonymous>)
+      at C:\Users\EIRON\Anaconda3\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\EIRON\Anaconda3\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\EIRON\Anaconda3\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "talent-data-api-test",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/stit/talent-data-api-test.git",
+    "author": "Gabriela Mota <gabriela.mota.ext@bayer.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "dev": "npm-run-all --parallel watch serve:dev",
+      "start": "npm-run-all --parallel watch serve:dev",
+      "watch": "better-npm-run watch",
+      "serve:dev": "better-npm-run serve-dev",
+      "lint": "better-npm-run format && better-npm-run lint"
+    },
+    "betterScripts": {
+      "watch": {
+        "command": "node utils/watch.js",
+        "env": {
+          "NODE_ENV": "development",
+          "BABEL_ENV": "development"
+        }
+      },
+      "serve-dev": {
+        "command": "wait-on dist/main.js && node-dev dist/main.js | pino-pretty -i time,pid,hostname",
+        "env": {
+          "NODE_ENV": "development"
+        }
+      },
+      "lint": "eslint . --fix",
+      "format": "prettier \"**/{*.{js?(on),y?(a)ml,md},.*.y?(a)ml,.*.json}\" --write --loglevel warn"
+    },
+    "dependencies": {
+      "@babel/core": "^7.12.10",
+      "@babel/plugin-proposal-class-properties": "^7.12.1",
+      "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+      "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+      "@babel/plugin-proposal-private-methods": "^7.12.1",
+      "@babel/plugin-syntax-bigint": "^7.8.3",
+      "@babel/preset-env": "^7.12.11",
+      "awilix": "^4.3.1",
+      "babel-loader": "^8.2.2",
+      "better-npm-run": "^0.1.1",
+      "better-validator": "^2.1.9",
+      "copy-webpack-plugin": "^7.0.0",
+      "dotenv": "^8.2.0",
+      "fast-json-stringify": "^2.2.10",
+      "fastify": "^3.9.2",
+      "fastify-auth": "^1.0.1",
+      "fastify-compress": "^3.4.0",
+      "fastify-cookie": "^5.1.0",
+      "fastify-cors": "^5.1.0",
+      "fastify-helmet": "^5.1.0",
+      "fastify-jwt": "^3.0.0",
+      "fastify-plugin": "^3.0.0",
+      "fastify-sensible": "^3.1.0",
+      "find-my-way": "^3.0.5",
+      "glob": "^7.1.6",
+      "lodash": "^4.17.20",
+      "node-dev": "^7.0.0",
+      "node-fetch": "^2.6.1",
+      "npm-run-all": "^4.1.5",
+      "pino": "^6.8.0",
+      "pino-pretty": "^5.0.2",
+      "readline": "^1.3.0",
+      "rimraf": "^3.0.2",
+      "stream": "^0.0.2",
+      "under-pressure": "^5.4.0",
+      "wait-on": "^5.3.0",
+      "webpack": "^5.11.0",
+      "webpack-node-externals": "^2.5.2"
+    },
+    "devDependencies": {
+      "babel-eslint": "^10.1.0",
+      "chai": "^4.3.0",
+      "prettier": "^2.2.1",
+      "sinon": "^9.2.4",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
